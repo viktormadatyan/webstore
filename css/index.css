@@ -1,0 +1,43 @@
+body {
+    background-color: burlywood;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  
+  
+  
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.side-menu {
+    grid-column-start: 1;
+    grid-column-end: 8;
+
+}
+
+
+
+
+
