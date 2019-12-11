@@ -1,51 +1,128 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viktorious Cars</title>
-    <meta name="description" content="[A short description]">
-    <meta name="author" content="[Viktor Madatyan]">
-    <link rel="stylesheet" href="css/reset.css"> <!-- You may change this "Reset" to "Normalize" if preferred -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material design icons are use below. Remove this line if using other font packs or images. Details on Material Design icons can be found here: https://material.io/resources/icons/ -->
-    <link rel="stylesheet" href="css/index.css">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">    
+<title>Viktorious Cars</title>
+<meta name="description" content="[A short description]">
+<meta name="author" content="[Viktor Madatyan]">
+<link rel="stylesheet" href="css/reset.css"> <!-- You may change this "Reset" to "Normalize" if preferred -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material design icons are use below. Remove this line if using other font packs or images. Details on Material Design icons can be found here: https://material.io/resources/icons/ -->
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      <div class="grid-container">
-          <div class="header">Header</div>
-          <div class="side-menu">side menu</div>
-          <div class="item1">1</div>
-          <div class="item2">2</div>
-          <div class="item3">3</div>  
-          <div class="item4">4</div>
-          <div class="item5">5</div>
-          <div class="item6">6</div>
-          <div class="item7">7</div>
-          <div class="item8">8</div>
-          <div class="item1">9</div>
-          <div class="item2">10</div>
-          <div class="item3">11</div>  
-          <div class="item4">12</div>
-          <div class="item5">13</div>
-          <div class="item6">14</div>
-          <div class="item7">15</div>
-          <div class="item8">16</div>
-          <div class="item5">17</div>
-          <div class="item6">18</div>
-          <div class="item7">19</div>
-          <div class="item8">20</div>
-          <div class="footer">footer</div>
+
+</head>
+<body>
+
+<div class="header">
+  
+  <div class="logo">
+    <h1>VIKTORIOUS</h1>
+    <h1>CARS LOGO</h1>  
+  </div>
+
+  <div class="searchbox">
+      <input type="text" placeholder="Search.." name="search" height="120" width="75%">
+      <button id="srch_btn"><i class="fa fa-search"></i> SEARCH</button>      
+  </div> 
+
+  <div class="user">
+      Hello, Viktor!
+      <button id="arrow">▼</button>
+  </div>   
+
+  <div class="cart">      
+      <button class="btn" id="cart_btn"><i class="fa fa-shopping-cart"></i> CART</button>
+  </div> 
+  <div class="navigation">
+      <a class="active menu_item" href="#home">Menu</a>
+      <a class="menu_item" href="#about">Your orders</a>
+      <a class="menu_item" href="#contact">Your account</a>      
+      <a class="menu_item" href="#help">Help</a>      
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="col-3 menu">
+    <ul>
+      <li>
+        <div>
+            <p>Price</p> <br/>
+            <input type="radio" name="price" value="0" checked="true"> All<br>
+            <input type="radio" name="price" value="1"> 0-100<br>
+            <input type="radio" name="price" value="2"> 100-200<br>
+            <input type="radio" name="price" value="3"> 200-300<br>              
+            <input type="radio" name="price" value="4"> 300 and up<br>
         </div>
-        
-      
-     
-      
-   
-   
-   
-   
-   
-   <script src="js/index.js"></script>
-  </body>
+      </li>
+      <li>
+
+          <div>
+            <p>Sort</p> <br/>
+            <input type="radio" name="sort" value="0" checked="true"> All<br>
+            <input type="radio" name="sort" value="1"> Diecast cars<br>
+            <input type="radio" name="sort" value="2"> Remote controls<br>
+            <input type="radio" name="sort" value="3"> Kits<br>                          
+          </div>
+
+      </li>
+      <li>
+          <div>
+              <p>Brands</p> <br/>
+              <input type="radio" name="brands" value="0" checked="true"> All<br>
+              <input type="radio" name="brands" value="1"> Tamiya<br>
+              <input type="radio" name="brands" value="2"> Kyosho<br>
+              <input type="radio" name="brands" value="3"> G-made<br>
+              <input type="radio" name="brands" value="3"> Axial<br>
+          </div>
+
+      </li>      
+    </ul>
+  </div>
+
+  <div class="col-9">
+  <ul class="listing">
+      <li>
+        <h2>Item One</h2>
+        <div class="body"><p>The content of this listing item goes here.</p></div>
+        <div class="cta"><a href="">Call to action!</a></div>
+      </li>
+       <li>
+         <h2>Item Two</h2>
+         <div class="body"><p>The content of this listing item goes here.</p></div>
+         <div class="cta"><a href="">Call to action!</a></div>
+       </li>
+       <li class="wide">
+         <h2>Item Three</h2>
+         <div class="body"><p>The content of this listing item goes here.</p> 
+         <p>This one has more text than the other items.</p>
+         <p>Quite a lot more</p>
+         <p>Perhaps we could do something different with it?</p></div>
+         <div class="cta"><a href="">Call to action!</a></div>
+        </li>
+        <li>
+         <h2>Item Four</h2>
+         <div class="body"><p>The content of this listing item goes here.</p></div>
+         <div class="cta"><a href="">Call to action!</a></div>
+        </li>
+         <li>
+         <h2>Item Five</h2>
+         <div class="body"><p>The content of this listing item goes here.</p></div>
+          <div class="cta"><a href="">Call to action!</a></div>
+        </li>
+    </ul>
+  </div>
+
+
+
+</div>
+
+<div class="footer">
+  <p>2019 ViktoriousCars.ca inc</p>
+</div>
+<script src="js/index.js"></script>
+</body>
 </html>
