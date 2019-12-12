@@ -1,4 +1,4 @@
-//using  data, brands, types from data.js
+//this script is using  variables (data, brands, types) defined in 'data.js'
 
 
 //data declarations////////////////////////////////////////////////////////////////
@@ -6,7 +6,8 @@ var currentPriceFilter = 0;
 var currentTypeFilter = 0;
 var currentBrandFilter = 0;
 var itemsToShow = [];
-var shoppingCart = new Set();
+var shoppingCart = new Set(); //items in the cart
+var shoppingMode = true; //shopping or cart div is visible now 
 
 
 //functions declarations////////////////////////////////////////////////////////////////
@@ -203,20 +204,57 @@ function addToCart() {
 }
 
 
-document.getElementById("cart_btn").onclick = function(){
+function switchShoppingCart () {
     let store = document.getElementById("shopping_root");
     let cart = document.getElementById("shopping_cart");
-
+    let shop_mode = document.getElementById("shop_mode");
     
-    if (cart.style.display=='none' || cart.style.display=="" ){
+    if (shoppingMode == true){
+        updateShopingCart();
+
         store.style.display='none';
         cart.style.display='block';
+        shop_mode.innerHTML = "SHOP ";
     } 
     else{        
         cart.style.display='none';
-        store.style.display='grid';
+        store.style.display='grid';        
+        shop_mode.innerHTML = "CART ";
     }
-};
+    
+    document.getElementById("cart_items_num").innerHTML
+    shoppingMode =  !shoppingMode;    
+}
+
+function updateShopingCart(){
+    clearShopingCart(); //clear shopping cart first
+
+    //add all items from the cart
+    let cart_table_body = document.getElementById("cart_table_body");
+    
+    for (const item_index of shoppingCart) {
+        let item = data[item_index];
+        let html = buildShoppingCartItem (item);
+
+        var newNode = document.createElement('tr');            
+        newNode.innerHTML = html;
+        cart_table_body.appendChild(newNode);
+    }
+}
+
+function clearShopingCart(){
+    document.getElementById("cart_table_body").innerHTML = "";
+}
+
+function buildShoppingCartItem(item) {
+    return "<td>Not implemented</td>" +
+            "<td>1</td>"+
+            "<td>" + brands[item.brand] + " " + item.name + "</td>" +
+            "<td>" + "CAD $" + item.price + "</td>" +
+            "<td>" + "CAD $" + item.price + "</td>";
+}
+
+
 
 
 //init local data///////////////////////////////////////////////////////////////////////
@@ -225,6 +263,7 @@ for (i = 0; i < data.length; i++) {
 }
 
 document.getElementById("cart_items_num").innerHTML = shoppingCart.size;
+document.getElementById("cart_btn").addEventListener("click", switchShoppingCart);
 
 //action/////////////////////////////////////////////////////////////////
 //initial update

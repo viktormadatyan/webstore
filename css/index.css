@@ -211,3 +211,13 @@ input {
   border: beige;
 }
 
+table, th, td, tbody {
+  border: 1px solid #dcdcdc;
+  text-align: center;
+}
+
+td {
+  color:#6f9799;
+}
+
+ 

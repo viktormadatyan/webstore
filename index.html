@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">    
 <title>Viktorious Cars</title>
-<meta name="description" content="[A short description]">
+<meta name="description" content="[Car models internet store]">
 <meta name="author" content="[Viktor Madatyan]">
 <link rel="stylesheet" href="css/reset.css"> <!-- You may change this "Reset" to "Normalize" if preferred -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material design icons are use below. Remove this line if using other font packs or images. Details on Material Design icons can be found here: https://material.io/resources/icons/ -->
@@ -33,7 +33,7 @@
   </div>   
 
   <div class="cart">      
-      <button class="btn" id="cart_btn"><i class="fa fa-shopping-cart"></i> CART <strong id="cart_items_num"> </strong></button>
+      <button class="btn" id="cart_btn"><i class="fa fa-shopping-cart"></i> <strong id="shop_mode">CART </strong> <strong id="cart_items_num"> </strong></button>
   </div> 
   <div class="navigation">
       <a class="active" href="#home">Menu</a>
@@ -93,16 +93,20 @@
     <h1 >WHAT IS IN MY CART?</h1>
 
     <br/>
-    <table>
+    <table width="100%">
+      <thead>
         <tr>
           <th>Remove</th>
           <th>Quantity</th>
           <th>Product(s)</th>
           <th>Price</th>
           <th>Amount</th>
-        </tr>        
+        </tr>
+      </thead>
+      <tbody id="cart_table_body">
+        <!--shoping cart items---------------------->
+      </tbody>        
     </table>
-
 
     </div>
   </div>
