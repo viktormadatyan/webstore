@@ -33,13 +33,13 @@
   </div>   
 
   <div class="cart">      
-      <button class="btn" id="cart_btn"><i class="fa fa-shopping-cart"></i> CART</button>
+      <button class="btn" id="cart_btn"><i class="fa fa-shopping-cart"></i> CART <strong id="cart_items_num"> </strong></button>
   </div> 
   <div class="navigation">
-      <a class="active menu_item" href="#home">Menu</a>
-      <a class="menu_item" href="#about">Your orders</a>
-      <a class="menu_item" href="#contact">Your account</a>      
-      <a class="menu_item" href="#help">Help</a>      
+      <a class="active" href="#home">Menu</a>
+      <a href="#about">Your orders</a>
+      <a href="#contact">Your account</a>      
+      <a href="#help">Help</a>      
   </div>
 
 </div>
@@ -51,69 +51,60 @@
       <li>
         <div>
             <p>Price</p> <br/>
-            <input type="radio" name="price" value="0" checked="true"> All<br>
-            <input type="radio" name="price" value="1"> 0-100<br>
-            <input type="radio" name="price" value="2"> 100-200<br>
-            <input type="radio" name="price" value="3"> 200-300<br>              
-            <input type="radio" name="price" value="4"> 300 and up<br>
+            <input type="radio" name="price_radio" value="0" id="price_no_filter" checked="true" onclick="priceChanged(this);"> All<br>
+            <input type="radio" name="price_radio" value="1" onclick="priceChanged(this);"> 0-100<br>
+            <input type="radio" name="price_radio" value="2" onclick="priceChanged(this);"> 100-200<br>
+            <input type="radio" name="price_radio" value="3" onclick="priceChanged(this);"> 200-300<br>              
+            <input type="radio" name="price_radio" value="4" onclick="priceChanged(this);"> 300 and up<br>
         </div>
       </li>
       <li>
 
           <div>
-            <p>Sort</p> <br/>
-            <input type="radio" name="sort" value="0" checked="true"> All<br>
-            <input type="radio" name="sort" value="1"> Diecast cars<br>
-            <input type="radio" name="sort" value="2"> Remote controls<br>
-            <input type="radio" name="sort" value="3"> Kits<br>                          
+            <p>Type</p> <br/>
+            <input type="radio" name="type_radio" value="0" id="type_no_filter" checked="true" onclick="typeChanged(this);"> All<br>
+            <input type="radio" name="type_radio" value="1" onclick="typeChanged(this);"> Diecast cars<br>
+            <input type="radio" name="type_radio" value="2" onclick="typeChanged(this);"> Remote controls<br>
+            <input type="radio" name="type_radio" value="3" onclick="typeChanged(this);"> Kits<br>                          
           </div>
 
       </li>
       <li>
           <div>
               <p>Brands</p> <br/>
-              <input type="radio" name="brands" value="0" checked="true"> All<br>
-              <input type="radio" name="brands" value="1"> Tamiya<br>
-              <input type="radio" name="brands" value="2"> Kyosho<br>
-              <input type="radio" name="brands" value="3"> G-made<br>
-              <input type="radio" name="brands" value="3"> Axial<br>
+              <input type="radio" name="brands_radio" value="0" id="brand_no_filter" checked="true" onclick="brandChanged(this);"> All<br>
+              <input type="radio" name="brands_radio" value="1" onclick="brandChanged(this);"> Tamiya<br>
+              <input type="radio" name="brands_radio" value="2" onclick="brandChanged(this);"> Kyosho<br>
+              <input type="radio" name="brands_radio" value="3" onclick="brandChanged(this);"> G-made<br>
+              <input type="radio" name="brands_radio" value="4" onclick="brandChanged(this);"> Axial<br>
           </div>
 
       </li>      
     </ul>
   </div>
 
-  <div class="col-9">
-  <ul class="listing">
-      <li>
-        <h2>Item One</h2>
-        <div class="body"><p>The content of this listing item goes here.</p></div>
-        <div class="cta"><a href="">Call to action!</a></div>
-      </li>
-       <li>
-         <h2>Item Two</h2>
-         <div class="body"><p>The content of this listing item goes here.</p></div>
-         <div class="cta"><a href="">Call to action!</a></div>
-       </li>
-       <li class="wide">
-         <h2>Item Three</h2>
-         <div class="body"><p>The content of this listing item goes here.</p> 
-         <p>This one has more text than the other items.</p>
-         <p>Quite a lot more</p>
-         <p>Perhaps we could do something different with it?</p></div>
-         <div class="cta"><a href="">Call to action!</a></div>
-        </li>
-        <li>
-         <h2>Item Four</h2>
-         <div class="body"><p>The content of this listing item goes here.</p></div>
-         <div class="cta"><a href="">Call to action!</a></div>
-        </li>
-         <li>
-         <h2>Item Five</h2>
-         <div class="body"><p>The content of this listing item goes here.</p></div>
-          <div class="cta"><a href="">Call to action!</a></div>
-        </li>
+  <div class="col-9">  
+    <ul class="listing" id="shopping_root">
+    <!-- root for all items---------------------->
     </ul>
+  
+    <div class="cart_listing" id="shopping_cart">
+    <!-- shopping cart content ---------------------->
+    <h1 >WHAT IS IN MY CART?</h1>
+
+    <br/>
+    <table>
+        <tr>
+          <th>Remove</th>
+          <th>Quantity</th>
+          <th>Product(s)</th>
+          <th>Price</th>
+          <th>Amount</th>
+        </tr>        
+    </table>
+
+
+    </div>
   </div>
 
 
@@ -123,6 +114,7 @@
 <div class="footer">
   <p>2019 ViktoriousCars.ca inc</p>
 </div>
+<script src="js/data.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>
